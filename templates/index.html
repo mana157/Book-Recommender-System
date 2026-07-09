@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Recommender</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        .navbar{
+            background-color: #00a65a;
+            padding: 15px;
+        }
+
+        .navbar-brand{
+            color: white !important;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .nav-link{
+            color: white !important;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        .main-heading{
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .main-heading h1{
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .main-heading p{
+            font-size: 24px;
+            color: lightgray;
+        }
+
+        .btn-custom{
+            background-color: #00a65a;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .book-card{
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/">
+                My Book Recommender
+            </a>
+
+            <div class="d-flex">
+
+                <a class="nav-link" href="/">Home</a>
+
+                <a class="nav-link" href="/recommend">Recommend</a>
+
+                <a class="nav-link" href="#">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Section -->
+
+    <div class="container main-heading">
+
+        <h1>
+            Welcome To Book Recommender System
+        </h1>
+
+        <p>
+            Discover Your Next Favorite Book 📚
+        </p>
+
+        <button class="btn-custom">
+
+            Explore Books
+        </button>
+
+    </div>
+<!-- Top 50 Books Section -->
+
+    <div class="container book-section">
+
+        <h2 class="section-title">
+            Top 50 Books
+        </h2>
+
+
+
+         <div class="row g-4">
+
+{% for i in range(book_name|length) %}
+
+    <div class="col-md-3" style="margin-top:50px">
+
+        <div class="book-card">
+
+            <img src="{{image[i]}}"
+                 class="img-fluid rounded"
+                 style="width:180px; height:250px">
+
+            <h5 class="text-white mt-3">
+                {{book_name[i]}}
+            </h5>
+
+            <h6 class="text-white">
+                {{author[i]}}
+            </h6>
+
+            <h6 class="text-white">
+                Votes - {{votes[i]}}
+            </h6>
+
+            <h6 class="text-white">
+                Rating - {{rating[i]}}
+            </h6>
+
+        </div>
+
+    </div>
+
+{% endfor %}
+
+</div>
+
+                </div>
+            </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
