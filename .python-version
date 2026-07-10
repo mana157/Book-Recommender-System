@@ -1,0 +1,4 @@
+3.10.11
+git add .python-version
+git commit -m "Specify Python 3.10"
+git push
